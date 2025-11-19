@@ -27,3 +27,13 @@ public static boolean permutation(String s1, String s2) {
     return false;
 }
 
+public static boolean permutation2(String s1, String s2) {
+    if (s1.length() < s2.length()) {
+        return false;
+    }
+    int[] count = new int[26];
+    // incomplete
+    return true;
+
+}
+

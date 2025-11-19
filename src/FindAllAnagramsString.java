@@ -20,4 +20,7 @@
         return ans;
     }
 
+    void main() {
+    }
+
 
