@@ -1,22 +1,22 @@
 public static void main(String[] args) {
     String[] strs = {"eat", "ate", "dd", "tea", "frear"};
-    System.out.println(ransomNote("a", "b"));
+    System.out.println(ransomNote("aa", "aba"));
 
 }
 
-public static boolean ransomNote(String ransomnote, String magazine) {
+public static boolean ransomNote(String ransomNote, String magazine) {
     boolean ransom = true;
-    char[] ransomNote = ransomnote.toCharArray();
+    char[] ransomnote = ransomNote.toCharArray();
     char[] magazineNote = magazine.toCharArray();
     Map<Character, Integer> m = new HashMap<>();
     Map<Character, Integer> r = new HashMap<>();
     for (char c : magazineNote) {
         m.put(c, m.getOrDefault(c, 0) + 1);
     }
-    for (char c : ransomNote) {
+    for (char c : ransomnote) {
         r.put(c, r.getOrDefault(c, 0) + 1);
     }
-    for (char c : magazineNote) {
+    for (char c : ransomnote) {
         if (m.getOrDefault(c, 0) < r.getOrDefault(c, 0)) {
             ransom = false;
         }
