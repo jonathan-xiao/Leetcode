@@ -16,17 +16,17 @@ public static int[][] spiralArray2(int n) {
             result[h][i] = seen;
             seen++;
         }
-        if (seen == rows*cols) break;
+        if (seen == rows*cols+1) break;
         for (int j = h+1; j < rows-h; j++) {
             result[j][cols-v-1] = seen;
             seen++;
         }
-        if (seen == rows*cols) break;
+        if (seen == rows*cols+1) break;
         for (int i = cols - v - 2; i >= v; i--) {
             result[rows-h-1][i] = seen;
             seen++;
         }
-        if (seen == rows*cols) break;
+        if (seen == rows*cols+1) break;
         for (int j = rows - h - 2; j >= h+1; j--) {
             result[j][v] = seen;
             seen++;
