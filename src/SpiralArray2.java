@@ -1,6 +1,6 @@
 public static void main(String[] args) {
     System.out.println(spiralArray(generateArray(1)));
-    System.out.println(spiralArray(generateArray(20)));
+    System.out.println(spiralArray(generateArray(6)));
 
 }
 
