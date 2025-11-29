@@ -19,6 +19,5 @@ public static int characterReplacement(String s, int k) {
         }
         maxLen = Math.max(maxLen, right - left + 1);
     }
-
     return maxLen;
 }
