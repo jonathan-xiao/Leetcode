@@ -15,6 +15,7 @@ public class MaxSubarray {
     }
 
     public int maxProduct(int[] nums) {
+        // in progress
         int max = Integer.MIN_VALUE;
         int curr = nums[0];
         for (int i = 1; i < nums.length; i++) {
