@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class QueueConsByHeight {
-    void main(String[] args){
-
-    }
 
     public int[][] reconstructQueue(int[][] people){
         Arrays.sort(people, (a, b) -> {
