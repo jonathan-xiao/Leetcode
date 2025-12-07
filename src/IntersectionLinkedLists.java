@@ -1,3 +1,5 @@
+import java.util.HashSet;
+
 public class IntersectionLinkedLists {
     void main(String[] args) {
 
@@ -23,6 +25,22 @@ public class IntersectionLinkedLists {
                 b =  b.next;
             }
             headA = headA.next;
+        }
+        return null;
+    }
+
+    public ListNode getIntersectionNode2(ListNode headA, ListNode headB) {
+        ListNode p1 = headA, p2 = headB;
+        HashSet<ListNode> set = new HashSet<>();
+        while (p1 != null) {
+            set.add(p1);
+            p1 = p1.next;
+        }
+        while (p2 != null) {
+            if (set.contains(p2)) {
+                return p2;
+            }
+            p2 = p2.next;
         }
         return null;
     }
