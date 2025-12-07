@@ -1,3 +1,8 @@
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
 public class MaxSubarray {
     void main(String args[]) {
         int[] a = new int[]{1,2,3,-4,-3};
@@ -15,12 +20,22 @@ public class MaxSubarray {
     }
 
     public int maxProduct(int[] nums) {
-        // in progress
-        int max = Integer.MIN_VALUE;
-        int curr = nums[0];
+        int max = nums[0];
+        int min = nums[0];
+        int res = nums[0];
         for (int i = 1; i < nums.length; i++) {
+            int num = nums[i];
+            if (num < 0) {
+                int temp = max;
+                max = min;
+                min = temp;
+            }
 
+            max = Math.max(num, max * num);
+            min = Math.min(num, min * num);
+
+            res = Math.max(res, max);
         }
-        return max;
+        return res;
     }
 }
