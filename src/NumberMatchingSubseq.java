@@ -15,6 +15,6 @@ public class NumberMatchingSubseq {
 
         }
         // WIP
-        return null;
+        return 0;
     }
 }
