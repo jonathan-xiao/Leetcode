@@ -1,9 +1,6 @@
 import java.util.Stack;
 
 public class RemoveStar {
-    void main(String[] args) {
-
-    }
 
     public String removeStar(String s) {
         Stack<Character> stack = new Stack<>();
