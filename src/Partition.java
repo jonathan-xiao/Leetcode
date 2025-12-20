@@ -26,7 +26,6 @@ public class Partition {
 
         tail.next = null;
         front.next = tailDummy.next;
-
         return frontDummy.next;
     }
 
