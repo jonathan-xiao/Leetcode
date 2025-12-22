@@ -19,7 +19,6 @@ public static String reorganizeString(String s) {
             return "";
         }
     }
-    // need the output builder
 
     // get maximum
     char maxChar = 0;
