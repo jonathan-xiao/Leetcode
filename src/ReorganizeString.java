@@ -20,7 +20,6 @@ public static String reorganizeString(String s) {
         }
     }
 
-    // get maximum
     char maxChar = 0;
     int maxCount = 0;
     for (Map.Entry<Character, Integer> entry : map.entrySet()) {
