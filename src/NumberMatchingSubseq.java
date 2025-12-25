@@ -1,9 +1,6 @@
 import java.util.HashMap;
 
 public class NumberMatchingSubseq {
-    void main(String[] args) {
-
-    }
 
     public int numMatchingSubseq(String s, String[] words) {
         int count = 0;
