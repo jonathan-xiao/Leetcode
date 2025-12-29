@@ -25,4 +25,21 @@ public class SameTree {
         return (isSameTree(p.left, q.left) && isSameTree(p.right, q.right));
     }
 
+    public boolean isSymmetric(TreeNode root) {
+        if (root == null) {
+            return true;
+        }
+        return isSameTree(root.left, reflect(root.right));
+    }
+
+    public TreeNode reflect(TreeNode root) {
+        if (root == null) {
+            return null;
+        }
+        TreeNode temp = root.left;
+        root.left = reflect(root.right);
+        root.right = reflect(temp);
+        return root;
+    }
+
 }
