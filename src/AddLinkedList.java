@@ -35,6 +35,4 @@ public class AddLinkedList {
         head.next = addhelp(cont1, cont2, sum / 10);
         return head;
     }
-
-
 }

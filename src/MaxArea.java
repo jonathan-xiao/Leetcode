@@ -6,6 +6,7 @@ public static void main(String[] args) {
     MaxArea(height);
     MaxArea(test);
     MaxArea(h1);
+    Arrays.sort(test);
 }
 
 public static int MaxArea(int[] height) {
