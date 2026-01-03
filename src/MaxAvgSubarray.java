@@ -11,6 +11,3 @@
         return (sum * 1.0 / k);
 }
 
- void main() {
- }
-
