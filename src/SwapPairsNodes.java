@@ -1,7 +1,4 @@
 public class SwapPairsNodes {
-    void main(String[] args) {
-
-    }
 
     public class ListNode {
         int val;
