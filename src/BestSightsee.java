@@ -10,4 +10,17 @@ public class BestSightsee {
         }
         return max;
     }
+
+    public int maxScoreSightseeingPair2(int[] values) {
+        int currI = values[0];
+        int bestI = Integer.MIN_VALUE;
+        int max = Integer.MIN_VALUE;
+        for (int i = 1; i < values.length; i++) {
+            currI = Math.max(currI, values[i-1] + i-1);
+            bestI = Math.max(bestI, currI);
+            max = Math.max(bestI + values[i] - i, max);
+        }
+        return max;
+    }
+
 }
