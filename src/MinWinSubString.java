@@ -1,12 +1,6 @@
 import java.util.HashMap;
 
 public class MinWinSubString {
-    void main(String[] args) {
-        System.out.println(minWindow("abcbabc", "ab"));
-        System.out.println(minWindow("aab", "cba"));
-        System.out.println(minWindow("aabc", "cba"));
-        System.out.println(minWindow("a", "a"));
-    }
 
     public String minWindow(String s, String t) {
         HashMap<Character, Integer> freq = new HashMap<>();
