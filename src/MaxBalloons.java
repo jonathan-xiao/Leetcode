@@ -12,3 +12,6 @@ public static int MaxBalloons(String text) {
     System.out.println(balloon);
     return balloon;
 }
+
+void main() {
+}
