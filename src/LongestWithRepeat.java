@@ -1,7 +1,3 @@
-public static void main(String[] args) {
-    System.out.println(characterReplacement("AABA", 1));
-}
-
 public static int characterReplacement(String s, int k) {
     if (s.length() == 0) {
         return 0;
@@ -20,4 +16,7 @@ public static int characterReplacement(String s, int k) {
         maxLen = Math.max(maxLen, right - left + 1);
     }
     return maxLen;
+}
+
+void main() {
 }
