@@ -12,7 +12,6 @@ public class SortColors {
             else if (nums[i] == 2) {
                 nums[i] = nums[right];
                 nums[right--] = 2;
-                i++;
             } else {
                 i++;
             }
