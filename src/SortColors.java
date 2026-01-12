@@ -3,7 +3,7 @@ public class SortColors {
         int left = 0;
         int right = nums.length - 1;
         int i = 0;
-        while (i < right) {
+        while (i <= right-left) {
             if (nums[i] == 0) {
                 nums[i] = nums[left];
                 nums[left++] = 0;
