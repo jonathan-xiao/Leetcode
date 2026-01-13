@@ -1,13 +1,4 @@
 import java.util.HashMap;
-
-public static void main(String[] args) {
-    int[] test = {1, 2, 3};
-    int[] h1 = {1,1,1};
-    int[] test1 = {2, 3, 4, 6, 10};
-    int[] height = {1,8,6,2,5,4,8,3,7};
-    System.out.println(isIsomorphic("bade", "baba"));
-
-}
     public static boolean isIsomorphic(String s, String t) {
         HashMap<Character, Character> st = new HashMap<>();
         HashMap<Character, Character> ts = new HashMap<>();
@@ -32,4 +23,7 @@ public static void main(String[] args) {
             }
         }
         return true;
+    }
+
+    void main() {
     }
