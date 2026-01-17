@@ -11,3 +11,6 @@ public static boolean ContinuousSubarraySum(int[] nums, int k) {
     }
     return false;
 }
+
+void main() {
+}
