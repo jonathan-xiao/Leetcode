@@ -1,10 +1,6 @@
 import java.util.Arrays;
 
 public class RemoveElement {
-    void main() {
-        int[] a = new int[]{1,2,3,2,3,1};
-    }
-
     public int removeElement(int[] nums, int val) {
         if (nums == null || nums.length == 0) {
             return 0;
@@ -21,4 +17,11 @@ public class RemoveElement {
         }
         return k;
     }
+
+    public int removeElement2(int[] nums, int val) {
+
+    }
+}
+
+void main() {
 }
