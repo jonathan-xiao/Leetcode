@@ -26,10 +26,10 @@ public class RemoveElement {
         }
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] == val) {
-                k++;
-            } else {
-                nums[pointer] = nums[i];
                 pointer++;
+            } else {
+                nums[i-pointer] = nums[i];
+                k++;
             }
         }
         return k;
@@ -37,5 +37,4 @@ public class RemoveElement {
 }
 
 void main() {
-
 }
