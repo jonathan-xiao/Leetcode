@@ -19,9 +19,23 @@ public class RemoveElement {
     }
 
     public int removeElement2(int[] nums, int val) {
-
+        int pointer = 0;
+        int k = 0;
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == val) {
+                k++;
+            } else {
+                nums[pointer] = nums[i];
+                pointer++;
+            }
+        }
+        return k;
     }
 }
 
 void main() {
+
 }
