@@ -47,7 +47,7 @@ public class ComplexMultiplication {
             b2 = -b2;
         }
         String answer = "";
-        answer += Integer.toString(a1*a1-b2*b2);
+        answer += Integer.toString(a1*b1-a2*b2);
         answer += "+";
         answer += Integer.toString(a1*b2+a2*b1);
         answer += "i";
