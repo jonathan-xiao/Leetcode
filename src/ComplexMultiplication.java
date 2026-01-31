@@ -52,7 +52,5 @@ public class ComplexMultiplication {
         answer += Integer.toString(a1*b2+a2*b1);
         answer += "i";
         return answer;
-
-
     }
 }
