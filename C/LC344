@@ -1,0 +1,12 @@
+void reverseString(char* s, int sSize) {
+    if (s == NULL || s == '\0') return;
+    int front = 0;
+    int back = sSize - 1;
+    while (front < back) {
+        char temp = s[front];
+        s[front]=s[back];
+        s[back] = temp;
+        front++;
+        back--;
+    }
+}
