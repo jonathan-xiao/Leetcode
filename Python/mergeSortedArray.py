@@ -2,6 +2,8 @@ import sys
 
 class Solution(object):
     def merge(self, nums1, m, nums2, n):
+        # idea: sort the array from the back, where we no longer have to shift values
+        # then, move everything remaining from nums2 into the unfilled spots
         back1 = m-1
         back2 = n-1
         last = m+n-1
