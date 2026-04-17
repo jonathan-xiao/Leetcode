@@ -14,3 +14,23 @@ class Solution(object):
                 cur = nums[i]
         
         return pos
+    
+    def remDupII(self, nums):
+        # idea: same as above, but we add a boolean condition to see if we have had a repetition yet
+        pos = 0
+        cur = -1000001
+        double = False
+        for i in range (len(nums)):
+            if (nums[i] == cur and double == True):
+                pass
+            elif (nums[i] == cur):
+                double = True
+                nums[pos] = nums[i]
+                pos += 1
+            else:
+                nums[pos] = nums[i]
+                pos += 1
+                cur = nums[i]
+                double = False
+        
+        return pos
