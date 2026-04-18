@@ -1,6 +1,6 @@
 class Solution(object):
     def majorityElement(self, nums):
-        # idea: exact implementation of the simplest Moore-Booth Voting Algorithm
+        # idea: exact implementation of the simplest Boyer-Moore Voting Algorithm
         candidate = nums[0]
         count = 0
         for i in range (len(nums)):
