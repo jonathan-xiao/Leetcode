@@ -8,3 +8,9 @@ class Solution(object):
 
         for i in range (len(nums)):
             nums[i] = new[i]
+
+    def rotateArray2(self, nums, k):
+        # idea: improve on the first version by removing the second loop
+        new = nums[:]
+        for i in range (len(nums)):
+            nums[((i+k) % (len(nums)))] = new[i]
