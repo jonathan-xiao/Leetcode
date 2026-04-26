@@ -1,5 +1,7 @@
 class Solution(object):
     def prod(self, nums):
+        # idea: create prefix and suffix sums, which is O(n) space
+        # then modify the original using the new sums
         l = len(nums)
         prefix = [1] * l
         suffix = [1] * l
