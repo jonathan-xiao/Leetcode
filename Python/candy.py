@@ -1,6 +1,6 @@
 class Solution(object):
     def candy(self, ratings):
-        
+        # currently incorrect implementation
         curcandy = 0
         curmin = 0
         curcount = 0
