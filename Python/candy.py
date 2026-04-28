@@ -1,6 +1,8 @@
 class Solution(object):
     def candy(self, ratings):
         # currently incorrect implementation
+        # problem is that the increments can be by more than +-1. 
+        # also, i need to track the length of the current "chain"
         curcandy = 0
         curmin = 0
         curcount = 0
