@@ -30,4 +30,18 @@ class Solution(object):
             tcount += curcount
             tcount += (1-curmin)*len(ratings)
         return tcount
+    
+    def candy2(self, ratings):
+        # idea: use two passes instead, checking the conditions in both directions
+        # then simply return the total number of candies
+        # O(N) space, so this can be optimized a little further
+        count = [1] * len(ratings)
+        for i in range (1, len(ratings)):
+            if (ratings[i] > ratings[i-1]):
+                count[i] = count[i-1]+1
             
+        for i in range(len(ratings)-2, -1, -1):
+            if (ratings[i] > ratings[i+1]):
+                count[i] = max(count[i], count[i+1]+1)
+
+        return sum(count)
