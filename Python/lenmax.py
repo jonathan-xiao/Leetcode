@@ -15,6 +15,9 @@ class Solution(object):
         return last
     
     def lcp(self, strs):
+        # idea: the prefix must be less or the same as the first word
+        # check every word in the set char by char, starting with the first
+        # any discrepancy means we return what we accumulated
         if len(strs) == 0:
             return ''
         if (len(strs[0]) == 0):
