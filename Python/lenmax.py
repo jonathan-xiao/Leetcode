@@ -13,3 +13,21 @@ class Solution(object):
                 last = cur
 
         return last
+    
+    def lcp(self, strs):
+        if len(strs) == 0:
+            return ''
+        if (len(strs[0]) == 0):
+            return ''
+        
+        maxpre = ''
+        cur = strs[0][0]
+        for i in range(len(strs[0])):
+            cur = (strs[0])[i]
+            for c in strs:
+                if i >= len(c) or c[i] != cur:
+                    return maxpre
+            
+            maxpre += cur
+        
+        return maxpre
