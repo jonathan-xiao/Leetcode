@@ -21,3 +21,21 @@ class Solution(object):
             return 0
         else:
             return mins
+        
+    def longnonrep(self, s):
+        # idea: sliding window with a set to track characters we are holding
+        left = 0
+        right = 0
+        longest = 0
+        track = set()
+        while right < len(s):
+            while s[right] in track:
+                track.remove(s[left])
+                left += 1
+            
+            track.add(s[right])
+            longest = max(longest, right - left + 1)
+            right += 1
+
+        return longest
+
