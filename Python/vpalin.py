@@ -20,3 +20,26 @@ class Solution(object):
                 right -= 1
         
         return True
+    
+    def pten(self, n):
+        if n < 10:
+            return 1
+        else:
+            return 1 + self.pten(n // 10)
+    
+    def ispalin(self, x):
+        if x < 0:
+            return False
+        elif x != 0 and x % 10 == 0:
+            return True
+        else:
+            right = self.pten(x)
+
+        first = x // pow(10, right - 1)
+        last = x % 10
+        if first == last:
+            middle = (x % pow(10, right - 1)) // 10
+            return self.ispalin(middle)
+        else:
+            return False
+
