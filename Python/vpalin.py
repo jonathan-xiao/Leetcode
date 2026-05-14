@@ -44,8 +44,14 @@ class Solution(object):
             return False
         
     def ispalinStr(self, x):
+        # idea: string conversion, then test equality between forward and backward
         if x < 0:
             return False
+        s = str(x)
+        return s == s[::-1]
+    
+    def ispalinStrII(self, x):
+        # idea: improves on previous by eliminating negative check
         s = str(x)
         return s == s[::-1]
 
