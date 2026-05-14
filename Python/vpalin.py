@@ -42,4 +42,10 @@ class Solution(object):
             return self.ispalin(middle)
         else:
             return False
+        
+    def ispalinStr(self, x):
+        if x < 0:
+            return False
+        s = str(x)
+        return s == s[::-1]
 
