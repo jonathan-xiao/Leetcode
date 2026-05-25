@@ -41,5 +41,24 @@ class Solution(object):
                     used.add(words[i])
 
         return True
+    
+    def anagram(self, s, t):
+        # use a dict to track character and frequencies
+        md = dict()
+        for c in s:
+            md[c] = md.get(c, 0) + 1
+
+        for c in t:
+            if c in md and md[c] != 1:
+                md[c] = md.get(c) - 1
+            elif c in md and md[c] == 1:
+                md.pop(c)
+            else:
+                return False
+            
+        if any(md.values()):
+            return False
+        
+        return True
 
 
