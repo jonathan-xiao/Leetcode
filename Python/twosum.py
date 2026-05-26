@@ -54,3 +54,17 @@ class Solution(object):
                     right -= 1
         
         return lst
+    
+    def twosum(self, nums, target):
+        # dict keep tracks of seen numbers for O(n) solution
+        md = dict()
+        for i in range(len(nums)):
+            if nums[i] in md:
+                lst = [md.get(nums[i]), i]
+                return lst
+            else:
+                md[target - nums[i]] = i
+
+
+
+
