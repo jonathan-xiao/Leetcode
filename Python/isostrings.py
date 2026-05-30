@@ -60,5 +60,22 @@ class Solution(object):
             return False
         
         return True
+    
+    def group(self, strs):
+        # idea: use a dict to store a base version, then compare sorted strings on it
+        d = dict()
+        res = []
+        count = 0
+        for s in strs:
+            key = tuple(sorted(s))
+            if key in d:
+                res[d[key]].append(s)
+            else:
+                d[key] = count
+                res.append([s])
+                count += 1
+        
+        return res
+
 
 
