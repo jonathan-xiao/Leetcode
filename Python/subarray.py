@@ -38,4 +38,18 @@ class Solution(object):
             right += 1
 
         return longest
+    
+    def containsNearbyDuplicate(self, nums, k):
+        # idea: use a dict to store more recent seen index
+        d = dict()
+        for i in range(len(nums)):
+            if nums[i] in d:
+                if i - d[nums[i]] <= k:
+                    return True
+                else:
+                    d[nums[i]] = i
+            else:
+                d[nums[i]] = i
+
+        return False
 
