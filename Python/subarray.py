@@ -52,4 +52,23 @@ class Solution(object):
                 d[nums[i]] = i
 
         return False
+    
+    def longestConsecutive(self, nums):
+        # idea: the set helps see if where to start each chain
+        # if not the start of a chain, skip, else count
+        numset = set(nums)
+        long = 0
+        for n in numset:
+            if n-1 not in numset:
+                cur = n
+                l = 1
+                while cur+1 in numset:
+                    cur += 1
+                    l += 1
+                
+                long = max(long, l)
+
+        return long
+
+
 
