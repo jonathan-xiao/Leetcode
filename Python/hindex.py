@@ -5,7 +5,7 @@ class Solution(object):
         # remember that we start from 0, so no need to return i-1
         citations.sort()
         citations.reverse()
-        for i in range (0,len(citations)):
+        for i in range(len(citations)):
             if i >= citations[i]:
                 return i
             
