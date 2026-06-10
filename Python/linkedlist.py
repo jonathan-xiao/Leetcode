@@ -58,6 +58,46 @@ class Solution(object):
         
         tail.next = list1 if list1 else list2
         return dummy.next
+    
+    def mergeTwoListsRec(self, list1, list2):
+        # idea: the recursive solution
+        if not list1:
+            return list2
+        if not list2:
+            return list1
+
+        if list1.val <= list2.val:
+            list1.next = self.mergeTwoListsRec(list1.next, list2)
+            return list1
+        else:
+            list2.next = self.mergeTwoListsRec(list1, list2.next)
+            return list2
+        
+    def reverseBetween(self, head, left, right):
+        # idea: iterate to left and then a classic reversal
+        # then attach the rest to next next
+        if left == right:
+            return head
+       
+        dummy = ListNode(0)
+        dummy.next = head
+        prev = dummy
+
+        for i in range(left - 1):
+            prev = prev.next
+
+        rev = None
+        cur = prev.next
+        for i in range(right - left + 1):
+            post = cur.next
+            cur.next = rev
+            rev = cur
+            cur = post
+       
+        prev.next.next = cur
+        prev.next = rev
+
+        return dummy.next
 
 
     
