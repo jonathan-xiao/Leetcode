@@ -17,4 +17,24 @@ class Solution(object):
         dummy = TreeNode(root.val)
         dummy.left = self.invertTree(root.right)
         dummy.right = self.invertTree(root.left)
+        root = dummy
+        return root
+    
+    def symHelp(self, t1, t2):
+        if not t1 and not t2:
+            return True
+        elif not t1 or not t2:
+            return False
+        if t1.val != t2.val:
+            return False
+        else:
+            return self.symHelp(t1.left, t2.right) and self.symHelp(t1.right, t2.left)
+
+
+    def isSymmetric(self, root):
+        if not root:
+            return True
+        else:
+            return self.symHelp(root.left, root.right)
+
             
