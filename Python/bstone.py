@@ -6,12 +6,14 @@ class TreeNode(object):
 
 class Solution(object):
     def maxDepth(self, root):
+        # idea: recursion
         if not root:
             return 0
         else:
             return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
         
     def invertTree(self, root):
+        # idea: recursion
         if not root:
             return None
         dummy = TreeNode(root.val)
@@ -32,9 +34,24 @@ class Solution(object):
 
 
     def isSymmetric(self, root):
+        # idea: use a helper and recurse down both halves
         if not root:
             return True
         else:
             return self.symHelp(root.left, root.right)
 
-            
+    def sortedArrayToBST(self, nums):
+        # idea: recurse, splitting the array into halves 
+        if not nums:
+            return None
+        elif len(nums) == 1:
+            root = TreeNode(nums[0])
+        else:
+            left = 0
+            right = len(nums)
+            mid = (left + right) // 2
+            root = TreeNode(nums[mid])
+            root.left = self.sortedArrayToBST(nums[left:mid])
+            root.right = self.sortedArrayToBST(nums[mid+1:right])
+
+        return root
