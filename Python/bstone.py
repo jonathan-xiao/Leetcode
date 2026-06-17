@@ -55,3 +55,17 @@ class Solution(object):
             root.right = self.sortedArrayToBST(nums[mid+1:right])
 
         return root
+    
+    def buildTree(self, preorder, inorder):
+        # idea: preorder always has the element before inorder so recurse, splitting the array down the coincidint spot
+        if not preorder or not inorder:
+            return None
+
+        rval = preorder[0]
+        root = TreeNode(rval)
+        
+        mid = inorder.index(rval)
+
+        root.left = self.buildTree(preorder[1:mid+1], inorder[:mid])
+        root.right = self.buildTree(preorder[mid+1:], inorder[mid+1:])
+        return root
