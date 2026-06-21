@@ -69,3 +69,32 @@ class Solution(object):
         root.left = self.buildTree(preorder[1:mid+1], inorder[:mid])
         root.right = self.buildTree(preorder[mid+1:], inorder[mid+1:])
         return root
+
+    def hasPathSum(self, root, targetSum):
+        # idea: recursive approach
+        if not root:
+            return False
+        if not root.left and not root.right:
+            if targetSum - root.val == 0:
+                return True
+            else:
+                return False
+        else:
+            if root.right and root.left:
+                return self.hasPathSum(root.left, targetSum - root.val) or self.hasPathSum(root.right, targetSum - root.val)
+            elif root.right:
+                return self.hasPathSum(root.right, targetSum - root.val)
+            else:
+                return self.hasPathSum(root.left, targetSum - root.val)
+            
+    def flatten(self, root):
+      def helper(node, acc):
+          if not node:
+              return acc
+          acc = helper(node.right, acc)
+          acc = helper(node.left, acc)
+          node.right = acc
+          node.left = None
+          return node
+      
+      helper(root, None)
